@@ -10,9 +10,7 @@ const generateContacts = async (number) => {
       const data = await fs.readFile(PATH_DB, 'utf-8');
       contacts = JSON.parse(data);
     } catch (error) {
-      // Если ошибка связана с отсутствием файла, просто создаём новый пустой массив
       if (error.code !== 'ENOENT') {
-        // Если ошибка другого типа, выбрасываем её для дальнейшей обработки
         throw error;
       }
     }
